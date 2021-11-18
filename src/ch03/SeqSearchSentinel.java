@@ -3,7 +3,7 @@ package ch03;
 import java.util.Arrays;
 import java.util.Random;
 
-public class seqSearchSentinel {
+public class SeqSearchSentinel {
 
     static int seqSearch(int[] arr, int n, int key){
         arr[n] = key;
