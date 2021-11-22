@@ -3,7 +3,7 @@ package ch06;
 import java.util.Arrays;
 import java.util.Random;
 
-public class SelectionSort2 {
+public class InsertionSort2 {
 
     static void swap(int[] arr, int idx1, int idx2){
         int tmp = arr[idx1];
@@ -12,12 +12,10 @@ public class SelectionSort2 {
     }
 
     static void sort(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            int min = arr[i];
-            int k = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if(min > arr[j]){
-                    swap(arr, k, j);
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = i; j > 0 ; j--) {
+                if(arr[j]<arr[j-1]){
+                    swap(arr, j, j-1);
                 }
             }
         }
