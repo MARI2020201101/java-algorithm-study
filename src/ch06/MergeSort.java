@@ -31,7 +31,7 @@ public class MergeSort {
             while(b < p){
                 arr[pl++] = buf[b++];
             }
-            while(k < right){
+            while(k <= right){
                 arr[pl++] = arr[k++];
             }
         }
