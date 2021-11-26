@@ -21,21 +21,40 @@ public class QuickSort3 {
 
         while(! leftStack.isEmpty()){
 
-            int pl = leftStack.pop();
-            int pr = rightStack.pop();
+            int pl = left = leftStack.pop();
+            int pr = right = rightStack.pop();
             int pivot = arr[(pl+pr)/2];
 
             while(pl<pr){
                 while(arr[pl]<pivot)pl++;
                 while(arr[pr]>pivot)pr--;
                 if(pl<pr) {
-                    swap(arr, pl,pr);
+                    swap(arr, pl, pr);
                 }
             }
-            if(left<pl) leftStack.push(pl);
-            if(pr<right) rightStack.push(pr+1);
-        }
 
+            System.out.print("[left num] : ");
+            for (int i = 0; i < pl; i++) {
+                System.out.print(arr[i] + " , ");
+            }
+            System.out.println();
+            System.out.println("[pivot num] : " + pivot);
+            System.out.print("[right num] : ");
+            for (int i = pr +1 ; i < arr.length; i++) {
+                System.out.print(arr[i] + " , ");
+            }
+
+            System.out.println();
+            System.out.println("---------------------------------------------------------");
+            if(left<pl){
+                leftStack.push(left);
+                rightStack.push(pl);
+            }
+            if(pr<right){
+                leftStack.push(pr+1);
+                rightStack.push(right);
+            }
+        }
     }
     public static void main(String[] args) {
         int[] arr = new Random().ints(10, 0, 100).toArray();
