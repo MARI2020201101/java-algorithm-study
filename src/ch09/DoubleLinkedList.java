@@ -17,6 +17,7 @@ public class DoubleLinkedList<E> {
         curr.next.prev = curr.prev;
         curr = curr.prev;
         if(curr==head) curr =curr.next;
+
     }
     public void addLast(E obj){
         curr = head.prev;
